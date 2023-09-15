@@ -25,7 +25,6 @@ def read_ical_from_url(url):
         print(f"An error occurred: {e}")
         return None
 
-# Example usage:
 url = "https://metalab.at/calendar/export/ical/"
 calendar = read_ical_from_url(url)
 now = datetime.datetime.now()
