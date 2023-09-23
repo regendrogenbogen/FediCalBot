@@ -42,6 +42,6 @@ if calendar:
             continue
         time_to_event = start.date() - now.date()
         if time_to_event.days == 0 and mode == 'today':
-            mastodon.toot(f'Heute um {start.hour}:{start.minute:02d} im @metalab@chaos.social: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='public')
+            mastodon.status_post(f'Heute um {start.hour}:{start.minute:02d} im @metalab@chaos.social: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='unlisted')
         if time_to_event.days == 7 and mode == 'soon':
-            mastodon.status_post(f'Am {start.date()} um {start.hour}:{start.minute:02d} im @metalab@chaos.social: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='public')
+            mastodon.status_post(f'Am {start.date()} um {start.hour}:{start.minute:02d} im @metalab@chaos.social: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='unlisted')
