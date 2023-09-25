@@ -38,6 +38,9 @@ if calendar:
         url = event.get("url")
         location = event.get("location")
         desc = event.get("description")
+        if desc is None:
+            desc = ""
+
         if start < now:
             continue
         time_to_event = start.date() - now.date()
