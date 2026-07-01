@@ -43,7 +43,10 @@ if calendar:
 
         place = "im @metalab@chaos.social"
         if location == 'Metalab Woanders':
-            place = "an einem anderen Ort"
+            place = "NICHT im @metalab@chaos.social"
+
+        if location == 'online':
+            place = "NICHT im @metalab@chaos.social sondern online"
 
         if start < now:
             continue
