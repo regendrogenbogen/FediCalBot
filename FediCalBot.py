@@ -41,10 +41,14 @@ if calendar:
         if desc is None:
             desc = ""
 
+        place = "im @metalab@chaos.social"
+        if location == 'Metalab Woanders':
+            place = "an einem anderen Ort"
+
         if start < now:
             continue
         time_to_event = start.date() - now.date()
         if time_to_event.days == 0 and mode == 'today':
-            mastodon.status_post(f'Heute um {start.hour}:{start.minute:02d} im @metalab@chaos.social: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='unlisted')
+            mastodon.status_post(f'Heute um {start.hour}:{start.minute:02d} {place}: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='unlisted')
         if time_to_event.days == 7 and mode == 'soon':
-            mastodon.status_post(f'Am {start.date()} um {start.hour}:{start.minute:02d} im @metalab@chaos.social: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='unlisted')
+            mastodon.status_post(f'Am {start.date()} um {start.hour}:{start.minute:02d} {place}: {summary}\n{desc}\n\nMehr Informationen: {url}', visibility='unlisted')
